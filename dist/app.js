@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebpack_setup=self.webpackChunkwebpack_setup||[]).push([[524],{993:(e,s,o)=>{var p=o(543),u=o.n(p);console.log(u().join(["Another","module","loaded!"]," "))}},e=>{e(e.s=993)}]);

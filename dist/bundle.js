@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebpack_setup=self.webpackChunkwebpack_setup||[]).push([[23],{954:()=>{console.log("lulumi!")}},e=>{e(e.s=954)}]);
