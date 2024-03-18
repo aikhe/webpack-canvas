@@ -1,3 +1,9 @@
+$body-color: gray;
+
+body {
+    background: $body-color;
+}
+
 .example {
     display: grid;
     transition: all .5s;

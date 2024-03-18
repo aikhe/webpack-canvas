@@ -1,0 +1,1 @@
+body{background:gray}.example{background:linear-gradient(180deg,#fff,#000);display:grid;font-size:calc(7.60465px + 1.04651vw);transition:all .5s;-webkit-user-select:none;user-select:none}@media screen and (min-width:1280px){.example{font-size:21px}}@media screen and (max-width:420px){.example{font-size:12px}}
