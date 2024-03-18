@@ -1,3 +1,10 @@
+module.exports = {
+  plugins: {
+    autoprefixer: {},
+    "rucksack-css": {},
+  },
+};
+
 if (process.env.NODE_ENV === "production") {
   module.exports = {
     plugins: {
