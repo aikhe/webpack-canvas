@@ -14,7 +14,7 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.scss$/i,
+        test: /\.css$/i,
         use: [
           {
             loader: "style-loader",
@@ -25,10 +25,6 @@ module.exports = merge(common, {
           },
           {
             loader: "postcss-loader",
-            options: { sourceMap: true },
-          },
-          {
-            loader: "sass-loader",
             options: { sourceMap: true },
           },
         ],

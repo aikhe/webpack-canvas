@@ -7,31 +7,30 @@ module.exports = {
       import: "./src/index.js",
       dependOn: "shared",
     },
-    app: {
-      import: "./src/app.js",
-      dependOn: "shared",
-    },
-    shared: ["lodash", "gsap"],
+    shared: ["react", "react-dom", "gsap"],
   },
   module: {
     rules: [
       {
-        test: /\.m?js$/,
+        test: /\.m?js$|jsx/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"],
+            presets: ["@babel/preset-env", "@babel/preset-react"],
           },
         },
       },
     ],
   },
+  resolve: {
+    extensions: [".js", ".jsx"],
+  },
   plugins: [
     new HtmlWebpackLogin({
       title: "Webpack Setup",
       filename: "index.html",
-      template: path.resolve(__dirname, "template.html"),
+      template: path.resolve(__dirname, "src/template.html"),
     }),
   ],
   optimization: {
@@ -40,7 +39,7 @@ module.exports = {
     },
   },
   output: {
-    filename: "[name].js",
+    filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
   },
 };
