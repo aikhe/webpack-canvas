@@ -4,9 +4,13 @@ const HtmlWebpackLogin = require("html-webpack-plugin");
 module.exports = {
   entry: {
     bundle: {
-      import: "./src/index.js",
+      import: "./src/main.jsx",
       dependOn: "shared",
     },
+    // App: {
+    //   import: "./src/App.jsx",
+    //   dependOn: "shared",
+    // },
     shared: ["react", "react-dom", "gsap"],
   },
   module: {
@@ -21,6 +25,10 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
     ],
   },
   resolve: {
@@ -28,9 +36,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackLogin({
+      favicon: "./src/webpack.ico",
       title: "Webpack Setup",
       filename: "index.html",
-      template: path.resolve(__dirname, "src/template.html"),
+      template: path.resolve(__dirname, "./template.html"),
     }),
   ],
   optimization: {
@@ -39,7 +48,7 @@ module.exports = {
     },
   },
   output: {
-    filename: "[name].[contenthash].js",
+    filename: "[name]-[contenthash].js",
     path: path.resolve(__dirname, "dist"),
   },
 };
