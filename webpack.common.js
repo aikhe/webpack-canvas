@@ -7,10 +7,6 @@ module.exports = {
       import: "./src/main.jsx",
       dependOn: "shared",
     },
-    // App: {
-    //   import: "./src/App.jsx",
-    //   dependOn: "shared",
-    // },
     shared: ["react", "react-dom", "gsap"],
   },
   module: {
