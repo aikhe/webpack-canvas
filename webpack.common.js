@@ -4,34 +4,38 @@ const HtmlWebpackLogin = require("html-webpack-plugin");
 module.exports = {
   entry: {
     bundle: {
-      import: "./src/index.js",
+      import: "./src/main.jsx",
       dependOn: "shared",
     },
-    app: {
-      import: "./src/app.js",
-      dependOn: "shared",
-    },
-    shared: ["lodash", "gsap"],
+    shared: ["react", "react-dom", "gsap"],
   },
   module: {
     rules: [
       {
-        test: /\.m?js$/,
+        test: /\.m?js$|jsx/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"],
+            presets: ["@babel/preset-env", "@babel/preset-react"],
           },
         },
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
     ],
+  },
+  resolve: {
+    extensions: [".js", ".jsx"],
   },
   plugins: [
     new HtmlWebpackLogin({
+      favicon: "./src/webpack.ico",
       title: "Webpack Setup",
       filename: "index.html",
-      template: path.resolve(__dirname, "template.html"),
+      template: path.resolve(__dirname, "./template.html"),
     }),
   ],
   optimization: {
@@ -40,7 +44,7 @@ module.exports = {
     },
   },
   output: {
-    filename: "[name].js",
+    filename: "[name]-[contenthash].js",
     path: path.resolve(__dirname, "dist"),
   },
 };

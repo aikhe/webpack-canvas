@@ -1,13 +1,7 @@
-module.exports = {
-  plugins: {
-    autoprefixer: {},
-    "rucksack-css": {},
-  },
-};
-
 if (process.env.NODE_ENV === "production") {
   module.exports = {
     plugins: {
+      tailwindcss: {},
       autoprefixer: {},
       cssnano: {},
       "rucksack-css": {},
@@ -16,6 +10,7 @@ if (process.env.NODE_ENV === "production") {
 } else {
   module.exports = {
     plugins: {
+      tailwindcss: {},
       autoprefixer: {},
       "rucksack-css": {},
     },
