@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "framework boilerplate",
   "main": "index.js",
+  "homepage": "http://THE_URL.com/",
   "scripts": {
     "dev": "webpack-dev-server --open --config webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js"

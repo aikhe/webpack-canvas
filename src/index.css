@@ -6,6 +6,12 @@
   color-scheme: dark;
 }
 
-.border-testing {
-  border: white solid 2px;
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+.inspect {
+  border: red solid 2px;
 }

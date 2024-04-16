@@ -7,7 +7,7 @@ module.exports = {
       import: "./src/main.jsx",
       dependOn: "shared",
     },
-    shared: ["react", "react-dom", "gsap"],
+    shared: ["react", "react-dom", "react-router-dom", "gsap"],
   },
   module: {
     rules: [

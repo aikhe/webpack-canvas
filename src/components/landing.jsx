@@ -6,7 +6,7 @@ import reactLogo from "../react.png";
 
 const Landing = () => {
   return (
-    <div className="flex flex-col justify-center items-center h-[100vh]">
+    <div className="flex flex-col justify-center items-center h-[95vh]">
       <img className="mb-4 h-[10rem]" src={webpackLogo} alt="webpack logo" />
       <h1 className="text-3xl">Webpack boilerplate</h1>
 
